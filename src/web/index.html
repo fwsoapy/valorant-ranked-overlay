@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Valorant Ranked Overlay - by fwsoapy</title>
+    <title>Valorant Ranked Overlay for OBS: Live Rank, RR and Wins (Free)</title>
+    <link rel="canonical" href="https://fwsoapy.github.io/valorant-ranked-overlay/" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="icon" href="./favicon-32.png" type="image/png" sizes="32x32" />
     <link rel="icon" href="./logo.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
@@ -36,6 +38,109 @@
       content="Free live Valorant ranked overlay for OBS. Type your Riot ID, copy one link, paste it into OBS. Nothing to install."
     />
     <meta name="twitter:image" content="https://fwsoapy.github.io/valorant-ranked-overlay/og.png" />
+
+    <!-- What search engines and AI assistants read about this page. The FAQ
+         answers match the visible "Questions" section at the bottom. -->
+    <script type="application/ld+json">
+[
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Valorant Ranked Overlay",
+        "url": "https://fwsoapy.github.io/valorant-ranked-overlay/",
+        "description": "Free live Valorant ranked overlay for OBS. Shows your rank, RR, RR gained today and today's wins and losses. Type your Riot ID, copy one link, paste it into OBS.",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Any (runs in OBS Browser Source or any web browser)",
+        "browserRequirements": "Requires JavaScript",
+        "isAccessibleForFree": true,
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "image": "https://fwsoapy.github.io/valorant-ranked-overlay/og.png",
+        "screenshot": "https://fwsoapy.github.io/valorant-ranked-overlay/og.png",
+        "author": {
+          "@type": "Person",
+          "name": "fwsoapy",
+          "url": "https://github.com/fwsoapy"
+        },
+        "codeRepository": "https://github.com/fwsoapy/valorant-ranked-overlay",
+        "license": "https://opensource.org/licenses/MIT",
+        "keywords": "Valorant overlay, Valorant rank overlay, Valorant RR tracker, OBS overlay, Twitch overlay, Streamlabs overlay, Valorant rank on stream",
+        "featureList": [
+          "Live Valorant rank and rank icon",
+          "RR progress bar and RR to next rank",
+          "RR gained or lost today",
+          "Today's wins and losses",
+          "Immortal and Radiant leaderboard position",
+          "Custom accent colour, corner rounding and background opacity"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What does the Valorant Ranked Overlay show?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Your current Valorant rank and rank icon, your RR (with a bar out of 100 below Immortal), how much RR you need for the next rank, the RR you've gained or lost today, and today's wins and losses. Immortal and Radiant players see their RR and leaderboard spot."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I add it to OBS?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Type your Riot ID (Name#TAG) and pick your region on this page, click Copy OBS link, then add a Browser source in OBS, paste the link into URL and set the size to 640 x 200. It also works in Streamlabs Desktop and any app with a browser source."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is it free? Do I need to download anything?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It's free and runs as a web page. There's nothing to download or install, and you don't need a Riot or HenrikDev account, just your Riot ID."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How often does it update?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Every 2 minutes while you're live, and every 10 minutes while OBS is open but not streaming or recording. New RR shows up a minute or two after a ranked game ends."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What counts as \"today\"?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Your games back to the first one with less than 3 hours before it, so it starts over by itself the next time you play. You can also reset it from OBS, or count the last 12 or 24 hours instead."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which regions are supported?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "NA, EU, AP, KR, LATAM and BR, for PC ranked."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where does the data come from?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ranked data comes from the HenrikDev Valorant API through a small proxy, and rank icons and colours from valorant-api.com. Nothing about you is stored on a server: your Riot ID and settings live in your OBS link."
+            }
+          }
+        ]
+      }
+    ]
+    </script>
 
     <script>
       /* Applies a stored theme before first paint so the other palette never
@@ -399,6 +504,13 @@
       .tip { margin: 14px 0 0; font-size: 13px; color: var(--muted); }
       .step-action { margin-top: 8px; }
 
+      .faq { max-width: 1300px; margin: 0 auto; padding: 0 20px 28px; }
+      .faq h2 { margin: 0 0 6px; font-size: 16px; }
+      .faq-item { border-top: 1px solid var(--line); padding: 10px 0; }
+      .faq-item:first-of-type { border-top: 0; }
+      .faq-item summary { cursor: pointer; font-weight: 600; font-size: 14px; }
+      .faq-item p { margin: 6px 0 0; color: var(--muted); font-size: 13.5px; max-width: 820px; }
+
       .site-footer {
         max-width: 1300px;
         margin: 0 auto;
@@ -420,6 +532,7 @@
         .settings-grid .span-2 { grid-column: auto; }
         .panel { padding: 15px; }
         .site-footer { padding: 0 16px 40px; }
+        .faq { padding: 0 16px 24px; }
         .link-box button { flex: 1 1 auto; }
         .stage { min-height: 140px; padding: 16px 8px; }
       }
@@ -585,6 +698,40 @@
         </section>
       </div>
     </main>
+
+    <section class="faq" id="faq" aria-labelledby="faq-title">
+      <div class="panel">
+        <h2 id="faq-title">Questions</h2>
+        <details class="faq-item" open>
+          <summary>What does the Valorant Ranked Overlay show?</summary>
+          <p>Your current Valorant rank and rank icon, your RR (with a bar out of 100 below Immortal), how much RR you need for the next rank, the RR you've gained or lost today, and today's wins and losses. Immortal and Radiant players see their RR and leaderboard spot.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How do I add it to OBS?</summary>
+          <p>Type your Riot ID (Name#TAG) and pick your region on this page, click Copy OBS link, then add a Browser source in OBS, paste the link into URL and set the size to 640 x 200. It also works in Streamlabs Desktop and any app with a browser source.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is it free? Do I need to download anything?</summary>
+          <p>It's free and runs as a web page. There's nothing to download or install, and you don't need a Riot or HenrikDev account, just your Riot ID.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How often does it update?</summary>
+          <p>Every 2 minutes while you're live, and every 10 minutes while OBS is open but not streaming or recording. New RR shows up a minute or two after a ranked game ends.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What counts as "today"?</summary>
+          <p>Your games back to the first one with less than 3 hours before it, so it starts over by itself the next time you play. You can also reset it from OBS, or count the last 12 or 24 hours instead.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Which regions are supported?</summary>
+          <p>NA, EU, AP, KR, LATAM and BR, for PC ranked.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Where does the data come from?</summary>
+          <p>Ranked data comes from the HenrikDev Valorant API through a small proxy, and rank icons and colours from valorant-api.com. Nothing about you is stored on a server: your Riot ID and settings live in your OBS link.</p>
+        </details>
+      </div>
+    </section>
 
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
 

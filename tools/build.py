@@ -10,6 +10,8 @@ src/ is the only place anything is written by hand:
     src/web/logo.svg          the site icon (favicon-32.png and
                               apple-touch-icon.png are renders of it)
     src/web/og.png            the picture link previews show (Discord, X, ...)
+    src/web/sitemap.xml,
+    src/web/llms.txt          what search engines and AI assistants read
     src/web/preview/*.html    unlisted pages, served at docs/preview/<name>/
 
 Run it after touching anything in src/. CI runs it with --check to make sure
@@ -73,6 +75,10 @@ def web_outputs():
     files[os.path.join(DOCS, "index.html")] = page(os.path.join(WEB, "index.html"), version)
     files[os.path.join(DOCS, "overlay.html")] = page(os.path.join(SRC, "overlay.html"), version)
     files[os.path.join(DOCS, "logo.svg")] = read(os.path.join(WEB, "logo.svg"))
+    # For search engines and AI assistants: the one page worth indexing, and a
+    # plain-text summary (llmstxt.org).
+    for name in ("sitemap.xml", "llms.txt"):
+        files[os.path.join(DOCS, name)] = read(os.path.join(WEB, name))
     # Serve the files as they are, without Jekyll looking at them first.
     files[os.path.join(DOCS, ".nojekyll")] = ""
     for name in ("favicon-32.png", "apple-touch-icon.png", "og.png"):

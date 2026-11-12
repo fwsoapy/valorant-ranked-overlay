@@ -1,0 +1,37 @@
+# Valorant Ranked Overlay
+
+> A free, live Valorant ranked overlay for OBS and other streaming apps. It shows a player's rank, RR, the RR gained or lost today, and today's wins and losses, and it updates by itself while they play. It runs as a web page: there's nothing to download or install.
+
+- Website and setup page: https://fwsoapy.github.io/valorant-ranked-overlay/
+- Source code (MIT): https://github.com/fwsoapy/valorant-ranked-overlay
+- Made by fwsoapy (https://github.com/fwsoapy)
+
+## How to use it
+
+1. Open https://fwsoapy.github.io/valorant-ranked-overlay/, type a Riot ID (Name#TAG) and pick a region: NA, EU, AP, KR, LATAM or BR.
+2. Pick an accent colour, corner rounding and background opacity. The card takes the rank's colour by default.
+3. Click "Copy OBS link".
+4. In OBS (or Streamlabs Desktop), add a Browser source, paste the link into URL and set the size to 640 x 200.
+
+## What it shows
+
+- Rank name and rank icon, Iron 1 to Radiant
+- RR, with a progress bar out of 100 and the RR needed for the next rank (Iron to Ascendant)
+- RR with no bar plus leaderboard position for Immortal and Radiant
+- RR gained or lost today, or over the last 12 or 24 hours
+- Today's wins and losses
+
+## Facts
+
+- Price: free. No account needed, only a Riot ID.
+- Platform: PC ranked (competitive queue).
+- Updates every 2 minutes while live, every 10 minutes while OBS is open but not live. New RR appears a minute or two after a game ends.
+- "Today" counts games back to the first one with less than 3 hours before it, and can be reset from OBS (right-click the source, Interact, Reset).
+- Data: HenrikDev Valorant API, through a Cloudflare Worker that keeps the API key off the page. Rank icons: valorant-api.com.
+- Privacy: nothing is stored on a server. The Riot ID and settings live in the OBS link.
+
+## Related
+
+- Ranked Overlay for Fortnite, by the same author: https://fwsoapy.github.io/ranked-overlay/
+
+Valorant Ranked Overlay isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.
