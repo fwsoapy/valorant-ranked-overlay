@@ -8,7 +8,8 @@
     <!-- Keeps the Dark Reader extension from recolouring the overlay. -->
     <meta name="darkreader-lock">
     <title>Valorant Ranked Overlay</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- The same look as the Simple design of fwsoapy/ranked-overlay (Fortnite). -->
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -16,32 +17,37 @@
             /* The rank's colour unless the link picks one (see the script). */
             --accent: #b489c4;
             --accent-rgb: 180, 137, 196;
-            --accent-light: color-mix(in srgb, var(--accent) 65%, white);
+            --accent-light: color-mix(in srgb, var(--accent) 60%, white);
             /* Card look, set from the link. */
-            --radius: 6px;
-            --bg-alpha: 0.86;
+            --radius: 20px;
+            --bg-alpha: 0.84;
         }
 
-        html, body { background: transparent; }
         body {
-            font-family: 'Barlow Semi Condensed', 'Arial Narrow', sans-serif;
+            background: transparent;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            height: 100vh;
             padding: 16px;
             overflow: hidden;
         }
 
         /* The card: the rank icon on the left, everything else beside it. */
-        .card {
+        .overlay-container {
             position: relative;
-            display: inline-flex;
+            display: flex;
             align-items: center;
             gap: 18px;
-            min-width: 480px;
-            padding: 16px 24px 16px 16px;
-            background: rgba(15, 25, 35, var(--bg-alpha));
+            background: rgba(14, 16, 22, var(--bg-alpha));
+            backdrop-filter: blur(8px);
             border: 1px solid rgba(255, 255, 255, calc(var(--bg-alpha) * 0.08));
             border-radius: var(--radius);
+            padding: 16px 24px 16px 16px;
+            min-width: 470px;
             user-select: none;
-            color: #fff;
         }
 
         .rank-icon {
@@ -63,37 +69,36 @@
 
         .rank-text {
             font-weight: 800;
-            font-size: 36px;
-            line-height: 1.05;
-            letter-spacing: 0.01em;
-            text-transform: uppercase;
+            font-size: 34px;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            color: #ffffff;
             white-space: nowrap;
         }
-        .rank-text .place { color: var(--accent-light); margin-left: 10px; }
+        .rank-text .place { color: var(--accent-light); margin-left: 8px; }
 
         .today {
             font-weight: 700;
             font-size: 22px;
             white-space: nowrap;
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
             color: rgba(255, 255, 255, 0.55);
         }
-        .pos  { color: #34d27b; }
-        .neg  { color: #ff4655; }
-        .zero { color: #ffffff; }
+        .session-pos  { color: #34d27b; }
+        .session-neg  { color: #ff5a67; }
+        .session-zero { color: #ffffff; }
 
         /* Below Immortal: how far into the rank, and what's left to the next. */
         .bar {
             height: 10px;
             margin-top: 12px;
-            border-radius: min(var(--radius), 99px);
+            border-radius: 99px;
             background: rgba(255, 255, 255, 0.12);
             overflow: hidden;
         }
         .bar-fill {
             height: 100%;
             width: 0;
+            border-radius: 99px;
             background: var(--accent);
             transition: width 0.4s ease;
         }
@@ -104,96 +109,102 @@
             margin-top: 6px;
             align-items: baseline;
             font-weight: 600;
-            font-size: 19px;
+            font-size: 18px;
             white-space: nowrap;
             color: rgba(255, 255, 255, 0.60);
         }
-        .bar-note b { color: #fff; font-weight: 700; }
-        .bar-note .have { color: var(--accent-light); font-weight: 800; font-size: 21px; }
+        .bar-note b { color: #ffffff; font-weight: 700; }
+        .bar-note .have { color: var(--accent-light); font-weight: 800; font-size: 20px; }
 
-        /* Immortal and Radiant: just the RR. */
-        .rr-row {
+        /* Immortal and Radiant: the RR, with no bar. */
+        .elo-row {
             display: none;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 28px;
             margin-top: 6px;
-            font-weight: 800;
-            font-size: 30px;
             white-space: nowrap;
+        }
+        .elo-text {
+            font-weight: 800;
+            font-size: 29px;
+            letter-spacing: -0.01em;
             color: var(--accent-light);
         }
         html.top .bar, html.top .bar-note { display: none; }
-        html.top .rr-row { display: block; }
+        html.top .elo-row { display: flex; }
 
         /* Today's wins and losses. */
-        .wl {
+        .rec-line {
             margin-top: 10px;
             padding-top: 8px;
-            border-top: 1px solid rgba(255, 255, 255, 0.09);
-            font-size: 17px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 16px;
             font-weight: 800;
             letter-spacing: 0.06em;
             text-transform: uppercase;
             white-space: nowrap;
         }
-        .wl .w { color: #4ade80; }
-        .wl .l { color: #ff6b76; }
-        .wl .s { color: rgba(255, 255, 255, 0.45); }
-        html.no-wl .wl { display: none; }
+        .rec-line .rw { color: #4ade80; }
+        .rec-line .rl { color: #f87171; }
+        .rec-line .rs { color: rgba(255, 255, 255, 0.45); }
+        html.no-wl .rec-line { display: none; }
 
         /* Unrated, or a problem before any numbers arrived: just the words. */
-        html.empty .bar, html.empty .bar-note, html.empty .rr-row, html.empty .wl, html.empty .today { display: none; }
+        html.empty .bar, html.empty .bar-note, html.empty .elo-row, html.empty .rec-line, html.empty .today { display: none; }
 
         .error-text {
             max-width: 560px;
-            margin-top: 6px;
-            font-family: system-ui, sans-serif;
             font-size: 11px;
             font-weight: 600;
+            color: rgba(245, 166, 35, 0.9);
+            text-align: center;
             line-height: 1.4;
-            color: rgba(245, 166, 35, 0.95);
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+            margin-top: 4px;
         }
 
-        /* "Reset RR gain": only shows under the mouse, which in OBS means
+        /* "Reset": only shows under the mouse, which in OBS means
            right-click > Interact, so viewers never see it. */
         .reset {
             position: absolute;
-            top: 6px;
-            right: 6px;
-            padding: 3px 8px;
-            font: 700 12px system-ui, sans-serif;
+            top: 8px;
+            right: 10px;
+            padding: 3px 9px;
+            font: 700 12px 'Plus Jakarta Sans', sans-serif;
             color: #fff;
-            background: rgba(255, 70, 85, 0.9);
-            border: 0;
-            border-radius: 4px;
+            background: rgba(55, 55, 55, 0.98);
+            border: 1px solid rgba(255, 255, 255, 0.30);
+            border-radius: 8px;
             cursor: pointer;
             opacity: 0;
             transition: opacity 0.15s;
         }
-        .card:hover .reset { opacity: 1; }
+        .overlay-container:hover .reset { opacity: 1; }
         html:not(.session) .reset, html.empty .reset { display: none; }
 
         /* ?outline=1: a ring in the rank's colour. */
-        html.outline .card { border: 2px solid rgba(var(--accent-rgb), 0.9); }
+        html.outline .overlay-container { border: 2px solid rgba(var(--accent-rgb), 0.9); }
         /* ?icon=0: no rank icon. */
-        html.no-icon .rank-icon { display: none; }
-        html.no-icon .card { padding-left: 24px; }
+        html.no-icon .rank-icon { display: none !important; }
+        html.no-icon .overlay-container { padding-left: 24px; }
         /* A see-through card: a shadow under the text keeps it readable on gameplay. */
+        html.clear .overlay-container { backdrop-filter: none; }
         html.clear .info { text-shadow: 0 2px 6px rgba(0, 0, 0, 0.85), 0 0 2px rgba(0, 0, 0, 0.9); }
         html.clear .bar { background: rgba(0, 0, 0, 0.45); }
     </style>
 </head>
 <body>
-    <div class="card" id="card">
+    <div class="overlay-container" id="card">
         <img class="rank-icon" id="rankIcon" alt="">
         <div class="info">
             <div class="top-row">
                 <div class="rank-text" id="rankText">Loading</div>
-                <div class="today" id="todayBox"><span id="todayLabel">Today</span>: <span id="todayVal" class="zero">+0 RR</span></div>
+                <div class="today" id="todayBox"><span id="todayLabel">Today</span>: <span id="todayVal" class="session-zero">+0 RR</span></div>
             </div>
             <div class="bar" id="bar"><div class="bar-fill" id="barFill"></div></div>
             <div class="bar-note" id="barNote"></div>
-            <div class="rr-row" id="rrRow"></div>
-            <div class="wl" id="wl"></div>
+            <div class="elo-row"><div class="elo-text" id="rrRow"></div></div>
+            <div class="rec-line" id="wl"></div>
         </div>
         <button class="reset" id="resetBtn" type="button" title="Start counting today's RR and wins from now">Reset</button>
     </div>
@@ -276,8 +287,8 @@
 
                 $('todayLabel').textContent = d.window_label;
                 var v = $('todayVal');
-                v.textContent = (d.rr_change > 0 ? '+' : d.rr_change < 0 ? '−' : '+') + Math.abs(d.rr_change) + ' RR';
-                v.className = d.rr_change > 0 ? 'pos' : d.rr_change < 0 ? 'neg' : 'zero';
+                v.textContent = (d.rr_change < 0 ? '-' : '+') + Math.abs(d.rr_change) + ' RR';
+                v.className = 'session-' + (d.rr_change > 0 ? 'pos' : d.rr_change < 0 ? 'neg' : 'zero');
 
                 if (d.top) {
                     $('rrRow').textContent = d.rr.toLocaleString('en-US') + ' RR';
@@ -287,9 +298,9 @@
                         + '<span><b>' + d.rr_to_next + ' RR</b> to ' + esc(d.next_name) + '</span>';
                 }
 
-                var wl = '<span class="w">' + plural(d.wins, 'Win', 'Wins') + '</span><span class="s">, </span>'
-                    + '<span class="l">' + plural(d.losses, 'Loss', 'Losses') + '</span>';
-                if (d.draws) wl += '<span class="s">, ' + plural(d.draws, 'Draw', 'Draws') + '</span>';
+                var wl = '<span class="rw">' + plural(d.wins, 'Win', 'Wins') + '</span><span class="rs">,</span> '
+                    + '<span class="rl">' + plural(d.losses, 'Loss', 'Losses') + '</span>';
+                if (d.draws) wl += '<span class="rs">, ' + plural(d.draws, 'Draw', 'Draws') + '</span>';
                 $('wl').innerHTML = wl;
             }
 
