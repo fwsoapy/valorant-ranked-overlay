@@ -6,7 +6,8 @@
 //
 // The fixtures in tests/fixtures/ follow HenrikDev's v3 MMR and v2 MMR
 // history answers field for field (the Diamond one carries the numbers from
-// HenrikDev's own documented example).
+// HenrikDev's own documented example). mmr-live and history-live are a real
+// answer for Henrik3#VALO, saved through the deployed Worker.
 'use strict';
 
 const test = require('node:test');
@@ -322,4 +323,20 @@ test('demo mode never asks the network', async () => {
   const { e, env } = engine({ search: '?demo=19' });
   await e.refresh(true);
   assert.equal(env.calls, 0);
+});
+
+test('a live HenrikDev answer (Henrik3#VALO, saved through the Worker)', () => {
+  const p = payload('live');
+  const cur = p.mmr.current;
+  const newest = Math.max(...p.history.map((g) => Date.parse(g.date)));
+  const now = newest + 30 * 60 * 1000;
+  const v = summarize(p, now, '24h', null);
+  assert.equal(v.tier_name, cur.tier.name);
+  assert.equal(v.rr, cur.rr);
+  const day = p.history.filter((g) => Date.parse(g.date) > now - 24 * 3600 * 1000);
+  assert.equal(v.games, day.length);
+  assert.equal(v.rr_change, day.reduce((s, g) => s + g.last_change, 0));
+  assert.equal(v.wins + v.losses + v.draws, v.games);
+  // The newest game always starts a session half an hour later.
+  assert.ok(summarize(p, now, 'session', null).games >= 1);
 });
