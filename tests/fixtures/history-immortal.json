@@ -1,0 +1,82 @@
+{
+  "status": 200,
+  "data": {
+    "account": {
+      "puuid": "b1c3a0f2-7d44-5e8a-9c21-3f6d2e4b8a17",
+      "name": "Sample",
+      "tag": "IMM"
+    },
+    "history": [
+      {
+        "match_id": "00000014-6c1e-4d2b-9a3f-000000abc014",
+        "tier": {
+          "id": 25,
+          "name": "Immortal 2"
+        },
+        "map": {
+          "id": "7eaecc1b-4337-bbf6-6ab9-04b8f06b3319",
+          "name": "Ascent"
+        },
+        "season": {
+          "id": "22d10d66-4d2a-a340-6c54-408c7bd53807",
+          "short": "e9a3"
+        },
+        "rr": 187,
+        "last_change": 21,
+        "elo": 2387,
+        "refunded_rr": 0,
+        "was_derank_protected": false,
+        "date": "2026-11-10T21:30:00.000Z",
+        "afk_penalty": 0,
+        "competitive_movement": "INCREASE",
+        "is_placement_match": false,
+        "match_length": 2840,
+        "new_map_incentive_rr_forgiven": null,
+        "queue_id": "competitive",
+        "rr_before_update": 166,
+        "rr_penalty": null,
+        "rr_performance_bonus": null,
+        "tier_before_update": {
+          "id": 25,
+          "name": "Immortal 2"
+        },
+        "was_derank_protection_replenished": false
+      },
+      {
+        "match_id": "00000015-6c1e-4d2b-9a3f-000000abc015",
+        "tier": {
+          "id": 25,
+          "name": "Immortal 2"
+        },
+        "map": {
+          "id": "2fe4ed3a-450a-948b-6d6b-e89a78e680a9",
+          "name": "Lotus"
+        },
+        "season": {
+          "id": "22d10d66-4d2a-a340-6c54-408c7bd53807",
+          "short": "e9a3"
+        },
+        "rr": 166,
+        "last_change": -17,
+        "elo": 2366,
+        "refunded_rr": 0,
+        "was_derank_protected": false,
+        "date": "2026-11-10T20:40:00.000Z",
+        "afk_penalty": 0,
+        "competitive_movement": "DECREASE",
+        "is_placement_match": false,
+        "match_length": 2877,
+        "new_map_incentive_rr_forgiven": null,
+        "queue_id": "competitive",
+        "rr_before_update": 183,
+        "rr_penalty": null,
+        "rr_performance_bonus": null,
+        "tier_before_update": {
+          "id": 25,
+          "name": "Immortal 2"
+        },
+        "was_derank_protection_replenished": false
+      }
+    ]
+  }
+}

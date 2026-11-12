@@ -1,0 +1,362 @@
+{
+  "status": 200,
+  "data": {
+    "account": {
+      "puuid": "54942ced-1967-5f66-8a16-1e0dae875641",
+      "name": "Henrik3",
+      "tag": "VALO"
+    },
+    "history": [
+      {
+        "match_id": "00000000-6c1e-4d2b-9a3f-000000abc000",
+        "tier": {
+          "id": 18,
+          "name": "Diamond 1"
+        },
+        "map": {
+          "id": "7eaecc1b-4337-bbf6-6ab9-04b8f06b3319",
+          "name": "Ascent"
+        },
+        "season": {
+          "id": "22d10d66-4d2a-a340-6c54-408c7bd53807",
+          "short": "e9a3"
+        },
+        "rr": 38,
+        "last_change": 15,
+        "elo": 1538,
+        "refunded_rr": 0,
+        "was_derank_protected": false,
+        "date": "2026-11-10T21:10:00.000Z",
+        "afk_penalty": 0,
+        "competitive_movement": "INCREASE",
+        "is_placement_match": false,
+        "match_length": 2100,
+        "new_map_incentive_rr_forgiven": null,
+        "queue_id": "competitive",
+        "rr_before_update": 23,
+        "rr_penalty": null,
+        "rr_performance_bonus": null,
+        "tier_before_update": {
+          "id": 18,
+          "name": "Diamond 1"
+        },
+        "was_derank_protection_replenished": false
+      },
+      {
+        "match_id": "00000001-6c1e-4d2b-9a3f-000000abc001",
+        "tier": {
+          "id": 18,
+          "name": "Diamond 1"
+        },
+        "map": {
+          "id": "2fe4ed3a-450a-948b-6d6b-e89a78e680a9",
+          "name": "Lotus"
+        },
+        "season": {
+          "id": "22d10d66-4d2a-a340-6c54-408c7bd53807",
+          "short": "e9a3"
+        },
+        "rr": 23,
+        "last_change": -18,
+        "elo": 1523,
+        "refunded_rr": 0,
+        "was_derank_protected": false,
+        "date": "2026-11-10T20:25:00.000Z",
+        "afk_penalty": 0,
+        "competitive_movement": "DECREASE",
+        "is_placement_match": false,
+        "match_length": 2137,
+        "new_map_incentive_rr_forgiven": null,
+        "queue_id": "competitive",
+        "rr_before_update": 41,
+        "rr_penalty": null,
+        "rr_performance_bonus": null,
+        "tier_before_update": {
+          "id": 18,
+          "name": "Diamond 1"
+        },
+        "was_derank_protection_replenished": false
+      },
+      {
+        "match_id": "00000002-6c1e-4d2b-9a3f-000000abc002",
+        "tier": {
+          "id": 18,
+          "name": "Diamond 1"
+        },
+        "map": {
+          "id": "2bee0dc9-4ffe-519b-1cbd-7fbe763a6047",
+          "name": "Haven"
+        },
+        "season": {
+          "id": "22d10d66-4d2a-a340-6c54-408c7bd53807",
+          "short": "e9a3"
+        },
+        "rr": 41,
+        "last_change": 22,
+        "elo": 1541,
+        "refunded_rr": 0,
+        "was_derank_protected": false,
+        "date": "2026-11-10T19:40:00.000Z",
+        "afk_penalty": 0,
+        "competitive_movement": "INCREASE",
+        "is_placement_match": false,
+        "match_length": 2174,
+        "new_map_incentive_rr_forgiven": null,
+        "queue_id": "competitive",
+        "rr_before_update": 19,
+        "rr_penalty": null,
+        "rr_performance_bonus": null,
+        "tier_before_update": {
+          "id": 18,
+          "name": "Diamond 1"
+        },
+        "was_derank_protection_replenished": false
+      },
+      {
+        "match_id": "00000003-6c1e-4d2b-9a3f-000000abc003",
+        "tier": {
+          "id": 18,
+          "name": "Diamond 1"
+        },
+        "map": {
+          "id": "92584fbe-486a-b1b2-9faa-39b0f486b498",
+          "name": "Sunset"
+        },
+        "season": {
+          "id": "22d10d66-4d2a-a340-6c54-408c7bd53807",
+          "short": "e9a3"
+        },
+        "rr": 19,
+        "last_change": 0,
+        "elo": 1519,
+        "refunded_rr": 0,
+        "was_derank_protected": false,
+        "date": "2026-11-10T18:55:00.000Z",
+        "afk_penalty": 0,
+        "competitive_movement": "STABLE",
+        "is_placement_match": false,
+        "match_length": 2211,
+        "new_map_incentive_rr_forgiven": null,
+        "queue_id": "competitive",
+        "rr_before_update": 19,
+        "rr_penalty": null,
+        "rr_performance_bonus": null,
+        "tier_before_update": {
+          "id": 18,
+          "name": "Diamond 1"
+        },
+        "was_derank_protection_replenished": false
+      },
+      {
+        "match_id": "00000004-6c1e-4d2b-9a3f-000000abc004",
+        "tier": {
+          "id": 18,
+          "name": "Diamond 1"
+        },
+        "map": {
+          "id": "2c9d57ec-4431-9c5e-2939-8f9ef6dd5cba",
+          "name": "Bind"
+        },
+        "season": {
+          "id": "22d10d66-4d2a-a340-6c54-408c7bd53807",
+          "short": "e9a3"
+        },
+        "rr": 19,
+        "last_change": -14,
+        "elo": 1519,
+        "refunded_rr": 0,
+        "was_derank_protected": false,
+        "date": "2026-11-10T18:10:00.000Z",
+        "afk_penalty": 0,
+        "competitive_movement": "DECREASE",
+        "is_placement_match": false,
+        "match_length": 2248,
+        "new_map_incentive_rr_forgiven": null,
+        "queue_id": "competitive",
+        "rr_before_update": 33,
+        "rr_penalty": null,
+        "rr_performance_bonus": null,
+        "tier_before_update": {
+          "id": 18,
+          "name": "Diamond 1"
+        },
+        "was_derank_protection_replenished": false
+      },
+      {
+        "match_id": "00000005-6c1e-4d2b-9a3f-000000abc005",
+        "tier": {
+          "id": 18,
+          "name": "Diamond 1"
+        },
+        "map": {
+          "id": "7eaecc1b-4337-bbf6-6ab9-04b8f06b3319",
+          "name": "Ascent"
+        },
+        "season": {
+          "id": "22d10d66-4d2a-a340-6c54-408c7bd53807",
+          "short": "e9a3"
+        },
+        "rr": 33,
+        "last_change": 19,
+        "elo": 1533,
+        "refunded_rr": 0,
+        "was_derank_protected": false,
+        "date": "2026-11-10T17:20:00.000Z",
+        "afk_penalty": 0,
+        "competitive_movement": "INCREASE",
+        "is_placement_match": false,
+        "match_length": 2285,
+        "new_map_incentive_rr_forgiven": null,
+        "queue_id": "competitive",
+        "rr_before_update": 14,
+        "rr_penalty": null,
+        "rr_performance_bonus": null,
+        "tier_before_update": {
+          "id": 18,
+          "name": "Diamond 1"
+        },
+        "was_derank_protection_replenished": false
+      },
+      {
+        "match_id": "00000006-6c1e-4d2b-9a3f-000000abc006",
+        "tier": {
+          "id": 18,
+          "name": "Diamond 1"
+        },
+        "map": {
+          "id": "2fe4ed3a-450a-948b-6d6b-e89a78e680a9",
+          "name": "Lotus"
+        },
+        "season": {
+          "id": "22d10d66-4d2a-a340-6c54-408c7bd53807",
+          "short": "e9a3"
+        },
+        "rr": 14,
+        "last_change": -20,
+        "elo": 1514,
+        "refunded_rr": 0,
+        "was_derank_protected": false,
+        "date": "2026-11-10T12:30:00.000Z",
+        "afk_penalty": 0,
+        "competitive_movement": "DECREASE",
+        "is_placement_match": false,
+        "match_length": 2322,
+        "new_map_incentive_rr_forgiven": null,
+        "queue_id": "competitive",
+        "rr_before_update": 34,
+        "rr_penalty": null,
+        "rr_performance_bonus": null,
+        "tier_before_update": {
+          "id": 18,
+          "name": "Diamond 1"
+        },
+        "was_derank_protection_replenished": false
+      },
+      {
+        "match_id": "00000007-6c1e-4d2b-9a3f-000000abc007",
+        "tier": {
+          "id": 18,
+          "name": "Diamond 1"
+        },
+        "map": {
+          "id": "2bee0dc9-4ffe-519b-1cbd-7fbe763a6047",
+          "name": "Haven"
+        },
+        "season": {
+          "id": "22d10d66-4d2a-a340-6c54-408c7bd53807",
+          "short": "e9a3"
+        },
+        "rr": 34,
+        "last_change": 25,
+        "elo": 1534,
+        "refunded_rr": 0,
+        "was_derank_protected": false,
+        "date": "2026-11-10T11:45:00.000Z",
+        "afk_penalty": 0,
+        "competitive_movement": "INCREASE",
+        "is_placement_match": false,
+        "match_length": 2359,
+        "new_map_incentive_rr_forgiven": null,
+        "queue_id": "competitive",
+        "rr_before_update": 9,
+        "rr_penalty": null,
+        "rr_performance_bonus": null,
+        "tier_before_update": {
+          "id": 18,
+          "name": "Diamond 1"
+        },
+        "was_derank_protection_replenished": false
+      },
+      {
+        "match_id": "00000008-6c1e-4d2b-9a3f-000000abc008",
+        "tier": {
+          "id": 18,
+          "name": "Diamond 1"
+        },
+        "map": {
+          "id": "92584fbe-486a-b1b2-9faa-39b0f486b498",
+          "name": "Sunset"
+        },
+        "season": {
+          "id": "22d10d66-4d2a-a340-6c54-408c7bd53807",
+          "short": "e9a3"
+        },
+        "rr": 9,
+        "last_change": 18,
+        "elo": 1509,
+        "refunded_rr": 0,
+        "was_derank_protected": false,
+        "date": "2026-11-09T23:00:00.000Z",
+        "afk_penalty": 0,
+        "competitive_movement": "PROMOTED",
+        "is_placement_match": false,
+        "match_length": 2396,
+        "new_map_incentive_rr_forgiven": null,
+        "queue_id": "competitive",
+        "rr_before_update": 91,
+        "rr_penalty": null,
+        "rr_performance_bonus": null,
+        "tier_before_update": {
+          "id": 17,
+          "name": "Platinum 3"
+        },
+        "was_derank_protection_replenished": false
+      },
+      {
+        "match_id": "00000009-6c1e-4d2b-9a3f-000000abc009",
+        "tier": {
+          "id": 17,
+          "name": "Platinum 3"
+        },
+        "map": {
+          "id": "2c9d57ec-4431-9c5e-2939-8f9ef6dd5cba",
+          "name": "Bind"
+        },
+        "season": {
+          "id": "22d10d66-4d2a-a340-6c54-408c7bd53807",
+          "short": "e9a3"
+        },
+        "rr": 91,
+        "last_change": 12,
+        "elo": 1491,
+        "refunded_rr": 0,
+        "was_derank_protected": false,
+        "date": "2026-11-09T22:15:00.000Z",
+        "afk_penalty": 0,
+        "competitive_movement": "INCREASE",
+        "is_placement_match": false,
+        "match_length": 2433,
+        "new_map_incentive_rr_forgiven": null,
+        "queue_id": "competitive",
+        "rr_before_update": 79,
+        "rr_penalty": null,
+        "rr_performance_bonus": null,
+        "tier_before_update": {
+          "id": 17,
+          "name": "Platinum 3"
+        },
+        "was_derank_protection_replenished": false
+      }
+    ]
+  }
+}

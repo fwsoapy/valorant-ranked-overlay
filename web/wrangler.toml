@@ -1,0 +1,6 @@
+# npx wrangler deploy (from this folder). The API key is a secret:
+# npx wrangler secret put HENRIK_API_KEY
+name = "valorant-ranked-proxy"
+main = "worker.js"
+compatibility_date = "2026-11-01"
+workers_dev = true

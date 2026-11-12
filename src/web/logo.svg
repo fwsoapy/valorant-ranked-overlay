@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1c2834"/>
+      <stop offset="1" stop-color="#0d151d"/>
+    </linearGradient>
+    <linearGradient id="blade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff6b77"/>
+      <stop offset="1" stop-color="#ff4655"/>
+    </linearGradient>
+  </defs>
+  <!-- a dark tile with two cut corners -->
+  <path d="M0 4 A4 4 0 0 1 4 0 H51 L64 13 V60 A4 4 0 0 1 60 64 H13 L0 51 Z" fill="url(#bg)"/>
+  <path d="M51 0 L64 13 M13 64 L0 51" stroke="#ff4655" stroke-width="2.5"/>
+  <!-- rank up: one sharp chevron -->
+  <path d="M10 35 L32 13 L54 35 H43 L32 24 L21 35 Z" fill="url(#blade)"/>
+  <!-- the three divisions of a rank, two of them done -->
+  <path d="M10 51 L14 44 H25 L21 51 Z" fill="#ff4655"/>
+  <path d="M25 51 L29 44 H40 L36 51 Z" fill="#ff4655"/>
+  <path d="M40 51 L44 44 H55 L51 51 Z" fill="#ff4655" opacity="0.28"/>
+</svg>

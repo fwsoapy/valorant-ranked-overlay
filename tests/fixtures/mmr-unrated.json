@@ -1,0 +1,62 @@
+{
+  "status": 200,
+  "data": {
+    "account": {
+      "puuid": "0d2e9f61-3c7b-5a48-8e1d-6b9a4c2f7e30",
+      "name": "Fresh",
+      "tag": "NEW"
+    },
+    "peak": null,
+    "current": {
+      "tier": {
+        "id": 0,
+        "name": "Unrated"
+      },
+      "rr": 0,
+      "last_change": 0,
+      "elo": 0,
+      "games_needed_for_rating": 3,
+      "games_needed_for_leaderboard": 0,
+      "rank_protection_shields": 0,
+      "rank_protection_status": null,
+      "is_at_rank_protected_tier": false,
+      "leaderboard_placement": null
+    },
+    "latest_update": null,
+    "ranked_state": {
+      "is_act_rank_badge_hidden": false,
+      "is_leaderboard_anonymized": false
+    },
+    "lifetime_prestige": null,
+    "seasonal": [
+      {
+        "season": {
+          "id": "22d10d66-4d2a-a340-6c54-408c7bd53807",
+          "short": "e8a2"
+        },
+        "wins": 22,
+        "games": 42,
+        "end_tier": {
+          "id": 18,
+          "name": "Diamond 1"
+        },
+        "end_rr": 12,
+        "ranking_schema": "ascendant",
+        "leaderboard_placement": null,
+        "act_wins": [
+          {
+            "id": 18,
+            "name": "Diamond 1"
+          }
+        ],
+        "act_rank": {
+          "id": 18,
+          "name": "Diamond 1"
+        },
+        "games_needed_for_rating": 0,
+        "wins_with_placements": 22,
+        "prestige": null
+      }
+    ]
+  }
+}

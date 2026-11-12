@@ -1,0 +1,10 @@
+{
+  "errors": [
+    {
+      "code": 0,
+      "message": "Rate limit reached",
+      "status": 429,
+      "details": null
+    }
+  ]
+}

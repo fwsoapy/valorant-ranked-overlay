@@ -1,0 +1,33 @@
+name: Build check
+
+# docs/ (the website) is generated from src/ by tools/build.py. If someone
+# edits a file in docs/ directly, the next build quietly overwrites it, so
+# check on every push that docs/ is still exactly what src/ produces.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: docs/ matches src/
+        run: python tools/build.py --check
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      # The engine on fixtures shaped like HenrikDev's answers (rank, RR,
+      # today's gain, wins and losses, error handling, request budget), and
+      # the Worker's routing, caching and rate limiting with a fake HenrikDev.
+      - name: Engine and Worker tests
+        run: node --test "tests/*.test.*"

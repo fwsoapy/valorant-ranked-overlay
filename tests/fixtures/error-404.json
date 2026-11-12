@@ -1,0 +1,10 @@
+{
+  "errors": [
+    {
+      "code": 24,
+      "message": "Not found",
+      "status": 404,
+      "details": null
+    }
+  ]
+}

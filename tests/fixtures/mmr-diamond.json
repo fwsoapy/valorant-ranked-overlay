@@ -1,0 +1,107 @@
+{
+  "status": 200,
+  "data": {
+    "account": {
+      "puuid": "54942ced-1967-5f66-8a16-1e0dae875641",
+      "name": "Henrik3",
+      "tag": "VALO"
+    },
+    "peak": {
+      "season": {
+        "id": "2de5423b-4aad-02ad-8d9b-c0a931958861",
+        "short": "e6a3"
+      },
+      "ranking_schema": "ascendant",
+      "tier": {
+        "id": 21,
+        "name": "Ascendant 1"
+      },
+      "rr": 0
+    },
+    "current": {
+      "tier": {
+        "id": 18,
+        "name": "Diamond 1"
+      },
+      "rr": 38,
+      "last_change": 15,
+      "elo": 1538,
+      "games_needed_for_rating": 0,
+      "games_needed_for_leaderboard": 0,
+      "rank_protection_shields": 0,
+      "rank_protection_status": null,
+      "is_at_rank_protected_tier": false,
+      "leaderboard_placement": null
+    },
+    "latest_update": {
+      "match_id": "00000000-6c1e-4d2b-9a3f-000000abc000",
+      "tier": {
+        "id": 18,
+        "name": "Diamond 1"
+      },
+      "map": {
+        "id": "7eaecc1b-4337-bbf6-6ab9-04b8f06b3319",
+        "name": "Ascent"
+      },
+      "season": {
+        "id": "22d10d66-4d2a-a340-6c54-408c7bd53807",
+        "short": "e9a3"
+      },
+      "rr": 38,
+      "last_change": 15,
+      "elo": 1538,
+      "refunded_rr": 0,
+      "was_derank_protected": false,
+      "date": "2026-11-10T21:10:00.000Z",
+      "afk_penalty": 0,
+      "competitive_movement": "INCREASE",
+      "is_placement_match": false,
+      "match_length": 2100,
+      "new_map_incentive_rr_forgiven": null,
+      "queue_id": "competitive",
+      "rr_before_update": 23,
+      "rr_penalty": null,
+      "rr_performance_bonus": null,
+      "tier_before_update": {
+        "id": 18,
+        "name": "Diamond 1"
+      },
+      "was_derank_protection_replenished": false
+    },
+    "ranked_state": {
+      "is_act_rank_badge_hidden": false,
+      "is_leaderboard_anonymized": false
+    },
+    "lifetime_prestige": null,
+    "seasonal": [
+      {
+        "season": {
+          "id": "22d10d66-4d2a-a340-6c54-408c7bd53807",
+          "short": "e8a2"
+        },
+        "wins": 22,
+        "games": 42,
+        "end_tier": {
+          "id": 18,
+          "name": "Diamond 1"
+        },
+        "end_rr": 12,
+        "ranking_schema": "ascendant",
+        "leaderboard_placement": null,
+        "act_wins": [
+          {
+            "id": 18,
+            "name": "Diamond 1"
+          }
+        ],
+        "act_rank": {
+          "id": 18,
+          "name": "Diamond 1"
+        },
+        "games_needed_for_rating": 0,
+        "wins_with_placements": 22,
+        "prestige": null
+      }
+    ]
+  }
+}

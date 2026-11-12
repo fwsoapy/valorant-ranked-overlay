@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Every rank</title>
+    <link rel="icon" href="../../favicon-32.png">
+    <!-- Not linked from the setup page: the overlay at every rank, with demo
+         numbers, to check the colours and icons in one place. -->
+    <style>
+        body { margin: 0; padding: 24px 16px 60px; background: #1d252e; color: #ece8e1; font: 15px system-ui, sans-serif; }
+        h1 { margin: 0 0 6px; font-size: 22px; }
+        p { margin: 0 0 20px; color: #9aa5b1; }
+        .grid { display: flex; flex-wrap: wrap; gap: 4px 12px; }
+        iframe { width: 640px; height: 200px; max-width: 100%; border: 0; }
+    </style>
+</head>
+<body>
+    <h1>Every rank</h1>
+    <p>The overlay at each rank, with demo numbers.</p>
+    <div class="grid" id="grid"></div>
+    <script>
+        for (var t = 3; t <= 27; t++) {
+            var f = document.createElement('iframe');
+            f.src = '../../overlay.html?demo=' + t;
+            f.title = 'Tier ' + t;
+            f.loading = 'lazy';
+            document.getElementById('grid').appendChild(f);
+        }
+    </script>
+</body>
+</html>
